@@ -1,0 +1,22 @@
+[
+  {
+    "title": "NullSec",
+    "slug": "nullsec",
+    "featured": true,
+    "status": "Active project",
+    "description": "A reconnaissance framework created by Jonaski. Additional technical details and verified project links are pending.",
+    "tags": ["Reconnaissance", "Security tooling"],
+    "sourceUrl": "",
+    "docsUrl": ""
+  },
+  {
+    "title": "Project details pending",
+    "slug": "pending",
+    "featured": false,
+    "status": "TODO",
+    "description": "More verified projects will appear here when their descriptions and public links are available.",
+    "tags": ["Placeholder"],
+    "sourceUrl": "",
+    "docsUrl": ""
+  }
+]

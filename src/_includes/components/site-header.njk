@@ -1,0 +1,20 @@
+<header class="site-header" data-header>
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="{{ site.name }} home">
+      <span class="brand-mark" aria-hidden="true">J/</span>
+      <span>{{ site.name }}</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+      <span class="sr-only">Toggle navigation</span>
+      <span aria-hidden="true">menu</span>
+    </button>
+    <nav class="primary-nav" id="primary-navigation" aria-label="Primary" data-navigation>
+      <ul>
+        {% for item in navigation %}
+          <li><a href="{{ item.href }}" data-nav-link><span aria-hidden="true">{{ item.code }}.</span> {{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <span class="system-status"><i aria-hidden="true"></i> system online</span>
+  </div>
+</header>

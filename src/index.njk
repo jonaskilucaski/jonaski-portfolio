@@ -1,0 +1,165 @@
+---
+layout: layouts/base.njk
+title: Jonaski
+description: Security researcher, bug bounty hunter, and creator of the NullSec reconnaissance framework.
+---
+{% include "components/intro.njk" %}
+<div id="top" class="site-shell">
+  {% include "components/site-header.njk" %}
+
+  <main id="main-content">
+    <section class="hero section" id="profile" aria-labelledby="profile-title" data-section>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span aria-hidden="true">[01]</span> PROFILE / ROOT</p>
+          <h1 id="profile-title">Finding the signal<br>inside the <em>noise.</em></h1>
+          <p class="hero-lede">{{ site.description }}</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore projects <span aria-hidden="true">→</span></a>
+            <a class="button button-quiet" href="#contact">Open a channel</a>
+          </div>
+        </div>
+        <aside class="profile-terminal" aria-label="Jonaski profile summary">
+          <div class="terminal-bar"><span>identity.json</span><span aria-hidden="true">● ● ●</span></div>
+          <dl class="identity-list">
+            <div><dt>handle</dt><dd>"Jonaski"</dd></div>
+            <div><dt>role</dt><dd>["security researcher",<br>"bug bounty hunter"]</dd></div>
+            <div><dt>building</dt><dd>"NullSec"</dd></div>
+            <div><dt>status</dt><dd class="green">"{{ site.availability }}"</dd></div>
+          </dl>
+          <p class="terminal-prompt"><span aria-hidden="true">jonaski@nullsec:~$</span> <span class="cursor" aria-hidden="true">_</span></p>
+        </aside>
+      </div>
+      <div class="signal-strip" aria-label="Areas of focus">
+        <span>RECONNAISSANCE</span><span>WEB SECURITY</span><span>OSINT</span><span>RESEARCH</span>
+      </div>
+    </section>
+
+    <section class="section ruled-section" id="expertise" aria-labelledby="expertise-title" data-section>
+      {% set code = "02" %}
+      {% set label = "EXPERTISE / CAPABILITIES" %}
+      {% set id = "expertise" %}
+      {% set title = "A research workflow built around curiosity and precision." %}
+      {% set intro = "No arbitrary scores or progress bars—just the disciplines that shape the work." %}
+      {% include "components/section-heading.njk" %}
+      <div class="expertise-grid">
+        {% for item in expertise %}
+          <article class="expertise-card">
+            <div class="card-index">0{{ loop.index }}</div>
+            <p class="card-code">{{ item.code }}</p>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+            <ul class="tag-list" aria-label="{{ item.title }} topics">
+              {% for topic in item.topics %}<li>{{ topic }}</li>{% endfor %}
+            </ul>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title" data-section>
+      {% set code = "03" %}
+      {% set label = "PROJECTS / BUILD LOG" %}
+      {% set id = "projects" %}
+      {% set title = "Tools for seeing the surface more clearly." %}
+      {% set intro = "Public project information is kept deliberately factual. Missing links are marked pending." %}
+      {% include "components/section-heading.njk" %}
+      <div class="project-list">
+        {% for project in projects %}
+          <article class="project-card{% if project.featured %} project-featured{% endif %}">
+            <div class="project-number" aria-hidden="true">0{{ loop.index }}</div>
+            <div class="project-body">
+              <div class="project-kicker">
+                <span>{{ project.status }}</span>
+                {% if project.featured %}<span class="featured-label">Featured system</span>{% endif %}
+              </div>
+              <h3>{{ project.title }}</h3>
+              <p>{{ project.description }}</p>
+              <ul class="tag-list" aria-label="{{ project.title }} tags">
+                {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+              </ul>
+            </div>
+            <div class="project-links">
+              {% if project.sourceUrl %}
+                <a href="{{ project.sourceUrl }}">Source <span aria-hidden="true">↗</span></a>
+              {% else %}
+                <span>Source URL <b>TODO</b></span>
+              {% endif %}
+              {% if project.docsUrl %}
+                <a href="{{ project.docsUrl }}">Documentation <span aria-hidden="true">↗</span></a>
+              {% else %}
+                <span>Documentation <b>TODO</b></span>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      <!-- TODO: Replace placeholder project with verified project details and URLs. -->
+    </section>
+
+    <section class="section ruled-section" id="research" aria-labelledby="research-title" data-section>
+      {% set code = "04" %}
+      {% set label = "RESEARCH / FIELD NOTES" %}
+      {% set id = "research" %}
+      {% set title = "Observations from the edge of the map." %}
+      {% set intro = "A future home for technical notes, methodologies, and responsibly published research." %}
+      {% include "components/section-heading.njk" %}
+      <div class="research-list">
+        {% for post in collections.research %}
+          <article class="research-card">
+            <div class="research-meta">
+              <time datetime="{{ post.date | htmlDate }}">{{ post.date | readableDate }}</time>
+              <span>{{ post.data.status }}</span>
+            </div>
+            <div>
+              <p class="card-code">{{ post.data.category }}</p>
+              <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+              <p>{{ post.data.description }}</p>
+            </div>
+            <a class="arrow-link" href="{{ post.url }}" aria-label="Read {{ post.data.title }}"><span aria-hidden="true">↗</span></a>
+          </article>
+        {% else %}
+          <p>No research entries published yet.</p>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="section" id="podcast" aria-labelledby="podcast-title" data-section>
+      <div class="podcast-panel">
+        <div>
+          <p class="eyebrow"><span aria-hidden="true">[05]</span> PODCAST / TRANSMISSIONS</p>
+          <h2 id="podcast-title">Conversations are another kind of reconnaissance.</h2>
+          <p>{{ podcast.description }}</p>
+        </div>
+        <div class="empty-state">
+          <span class="waveform" aria-hidden="true">▂▄▇▃▆▂▅▇▄▂</span>
+          <strong>{{ podcast.title }}</strong>
+          <p>Episode feed: <span>TODO</span></p>
+          <p>Listening links: <span>TODO</span></p>
+        </div>
+      </div>
+      <!-- TODO: Add only verified podcast identity, feed, episodes, artwork, and platform URLs. -->
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title" data-section>
+      <div class="contact-copy">
+        <p class="eyebrow"><span aria-hidden="true">[06]</span> CONTACT / SECURE CHANNEL</p>
+        <h2 id="contact-title">Have a legitimate reason to connect?</h2>
+        <p>Research collaboration, security tooling, or a thoughtful conversation—use a verified channel once one is published here.</p>
+      </div>
+      <div class="contact-terminal">
+        <p><span aria-hidden="true">$</span> contact --list</p>
+        <dl>
+          <div><dt>Email</dt><dd>{% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% else %}<span>TODO: address pending</span>{% endif %}</dd></div>
+          {% for profile in social %}
+            <div><dt>{{ profile.label }}</dt><dd>{% if profile.url %}<a href="{{ profile.url }}">{{ profile.url }}</a>{% else %}<span>TODO: {{ profile.note }}</span>{% endif %}</dd></div>
+          {% endfor %}
+        </dl>
+        <p class="terminal-prompt"><span aria-hidden="true">channel status:</span> awaiting verified endpoints</p>
+      </div>
+      <!-- TODO: Add Jonaski's verified email, social profiles, and optional PGP fingerprint. -->
+    </section>
+  </main>
+
+  {% include "components/site-footer.njk" %}
+</div>

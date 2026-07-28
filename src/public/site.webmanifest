@@ -1,0 +1,9 @@
+{
+  "name": "Jonaski — Security Researcher",
+  "short_name": "Jonaski",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050706",
+  "theme_color": "#050706",
+  "icons": []
+}

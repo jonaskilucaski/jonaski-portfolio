@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+---
+<div class="site-shell">
+  {% include "components/site-header.njk" %}
+  <main id="main-content" class="article-main">
+    <article class="article">
+      <header>
+        <a class="back-link" href="/#research">← Back to research</a>
+        <p class="eyebrow">{{ category }} / {{ status }}</p>
+        <h1>{{ title }}</h1>
+        <p class="article-description">{{ description }}</p>
+        <time datetime="{{ page.date | htmlDate }}">{{ page.date | readableDate }}</time>
+      </header>
+      <div class="prose">{{ content | safe }}</div>
+    </article>
+  </main>
+  {% include "components/site-footer.njk" %}
+</div>

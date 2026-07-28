@@ -1,0 +1,8 @@
+[
+  { "label": "Profile", "href": "#profile", "code": "01" },
+  { "label": "Expertise", "href": "#expertise", "code": "02" },
+  { "label": "Projects", "href": "#projects", "code": "03" },
+  { "label": "Research", "href": "#research", "code": "04" },
+  { "label": "Podcast", "href": "#podcast", "code": "05" },
+  { "label": "Contact", "href": "#contact", "code": "06" }
+]

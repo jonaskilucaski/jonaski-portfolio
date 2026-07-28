@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Reconnaissance",
+    "code": "RECON",
+    "description": "Mapping public attack surfaces and turning scattered signals into useful testing context.",
+    "topics": ["Asset discovery", "OSINT", "Workflow automation"]
+  },
+  {
+    "title": "Web & API security",
+    "code": "WEB/API",
+    "description": "Methodical testing of application behavior, trust boundaries, and exposed interfaces.",
+    "topics": ["Manual testing", "Request analysis", "Attack-surface review"]
+  },
+  {
+    "title": "Bug bounty",
+    "code": "BOUNTY",
+    "description": "Research-driven investigation within authorized program scope and disclosure processes.",
+    "topics": ["Scoping", "Validation", "Responsible reporting"]
+  },
+  {
+    "title": "Security tooling",
+    "code": "TOOLS",
+    "description": "Building focused utilities that make repeatable research workflows easier to operate.",
+    "topics": ["NullSec", "Automation", "Research workflows"]
+  }
+]

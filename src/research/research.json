@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/research-post.njk",
+  "tags": "research",
+  "permalink": "research/{{ page.fileSlug }}/index.html"
+}
