@@ -1,6 +1,8 @@
 {
-  "title": "Podcast details pending",
-  "description": "Jonaski’s podcast information has not yet been provided. Add the verified show name, description, artwork, episodes, and listening links before publishing.",
+  "title": "Jonaski Podcast",
+  "description": "Jonaski Podcast explores artificial intelligence, cybersecurity, ethical hacking, emerging technology, and the biggest stories shaping our digital world.",
+  "url": "https://open.spotify.com/show/033VYQlSBAMuJTZkYUBbZK",
+  "embedUrl": "https://open.spotify.com/embed/show/033VYQlSBAMuJTZkYUBbZK",
   "episodes": [],
   "platforms": []
 }

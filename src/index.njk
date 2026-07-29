@@ -128,17 +128,28 @@ description: Security researcher, bug bounty hunter, and creator of the NullSec 
       <div class="podcast-panel">
         <div>
           <p class="eyebrow"><span aria-hidden="true">[05]</span> PODCAST / TRANSMISSIONS</p>
-          <h2 id="podcast-title">Conversations are another kind of reconnaissance.</h2>
+          <h2 id="podcast-title">{{ podcast.title }}</h2>
           <p>{{ podcast.description }}</p>
+          <a class="button button-primary podcast-link" href="{{ podcast.url }}" target="_blank" rel="noopener noreferrer">
+            Listen on Spotify <span aria-hidden="true">↗</span>
+          </a>
         </div>
-        <div class="empty-state">
-          <span class="waveform" aria-hidden="true">▂▄▇▃▆▂▅▇▄▂</span>
-          <strong>{{ podcast.title }}</strong>
-          <p>Episode feed: <span>TODO</span></p>
-          <p>Listening links: <span>TODO</span></p>
+        <div class="podcast-terminal">
+          <div class="terminal-bar">
+            <span>spotify://show</span>
+            <span class="green">LIVE</span>
+          </div>
+          <div class="podcast-embed">
+            <iframe
+              src="{{ podcast.embedUrl }}"
+              title="Listen to {{ podcast.title }} on Spotify"
+              loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
         </div>
       </div>
-      <!-- TODO: Add only verified podcast identity, feed, episodes, artwork, and platform URLs. -->
     </section>
 
     <section class="section contact-section" id="contact" aria-labelledby="contact-title" data-section>
