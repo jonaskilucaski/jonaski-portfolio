@@ -1,7 +1,12 @@
+---
+permalink: site.webmanifest
+eleventyExcludeFromCollections: true
+---
 {
   "name": "Jonaski — Security Researcher",
   "short_name": "Jonaski",
-  "start_url": "/",
+  "start_url": "{{ "/" | url }}",
+  "scope": "{{ "/" | url }}",
   "display": "standalone",
   "background_color": "#050706",
   "theme_color": "#050706",

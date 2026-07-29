@@ -1,6 +1,6 @@
 <header class="site-header" data-header>
   <div class="header-inner">
-    <a class="brand" href="/" aria-label="{{ site.name }} home">
+    <a class="brand" href="{{ "/" | url }}" aria-label="{{ site.name }} home">
       <span class="brand-mark" aria-hidden="true">J/</span>
       <span>{{ site.name }}</span>
     </a>
@@ -11,7 +11,7 @@
     <nav class="primary-nav" id="primary-navigation" aria-label="Primary" data-navigation>
       <ul>
         {% for item in navigation %}
-          <li><a href="{{ item.href }}" data-nav-link><span aria-hidden="true">{{ item.code }}.</span> {{ item.label }}</a></li>
+          <li><a href="{% if page.url == "/" %}{{ item.href }}{% else %}{{ ("/" ~ item.href) | url }}{% endif %}" data-nav-link><span aria-hidden="true">{{ item.code }}.</span> {{ item.label }}</a></li>
         {% endfor %}
       </ul>
     </nav>

@@ -20,6 +20,10 @@ npm run check
 
 The generated site is written to `_site/`.
 
+GitHub Pages builds set `ELEVENTY_PATH_PREFIX=/jonaski-portfolio/` so generated
+URLs work below the repository subdirectory. Local development keeps `/` as the
+default path prefix.
+
 ## Content
 
 - Site identity and contact details: `src/_data/site.json`

@@ -1,4 +1,6 @@
 module.exports = function (eleventyConfig) {
+  const pathPrefix = process.env.ELEVENTY_PATH_PREFIX || "/";
+
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/public": "." });
 
@@ -27,6 +29,7 @@ module.exports = function (eleventyConfig) {
       data: "_data",
       output: "_site"
     },
+    pathPrefix,
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
   };
